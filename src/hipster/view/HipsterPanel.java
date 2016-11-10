@@ -14,6 +14,7 @@ public class HipsterPanel extends JPanel
 	
 	public HipsterPanel (HipsterController baseController)
 	{
+		super();
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
 		this.myButton = new JButton("Click the button");

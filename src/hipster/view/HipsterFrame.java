@@ -21,8 +21,9 @@ public class HipsterFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
-		this.setTitle("Wow a Window!?!");
+		this.setTitle("Too Hipster for YOU!?!");
 		this.setSize(new Dimension(500, 500));
+		this.setResizable(false);
 		this.setVisible(true);
 	}
 }

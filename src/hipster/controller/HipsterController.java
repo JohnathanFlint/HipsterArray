@@ -1,17 +1,20 @@
 package hipster.controller;
 
 import hipster.model.Hipster;
+import hipster.view.HipsterFrame;
 
 public class HipsterController
 {
 	private String [] words = {"this","is","the","next","level","of", "hipster", "the","initialization", "sequence"};
 	private Hipster [] hipsters;
 	private int [] numbers;
+	private HipsterFrame appFrame;
 	
 	public HipsterController()
 	{
 		numbers = new int [20];
 		hipsters = new Hipster [5];
+		appFrame = new HipsterFrame(this);
 	}
 	
 	public void start()
@@ -47,5 +50,7 @@ public class HipsterController
 	{
 		return numbers;
 	}
+	
+	
 
 }

@@ -20,6 +20,7 @@ public class HipsterPanel extends JPanel
 		this.infoLabel = new JLabel ("Wow words!");
 		this.dropDown = new JComboBox (baseController.getWords());
 		
+		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -36,7 +37,12 @@ public class HipsterPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, dropDown, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, dropDown, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, myButton, 109, SpringLayout.SOUTH, infoLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, infoLabel, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 183, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, myButton, 152, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()

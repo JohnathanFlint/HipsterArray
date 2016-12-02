@@ -1,8 +1,14 @@
 package hipster.view;
 
-import javax.swing.*;
 import hipster.controller.HipsterController;
 import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SpringLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HipsterPanel extends JPanel
 {
@@ -19,7 +25,7 @@ public class HipsterPanel extends JPanel
 		this.baseLayout = new SpringLayout();
 		this.myButton = new JButton("Click the button");
 		this.infoLabel = new JLabel ("Wow words!");
-		this.dropDown = new JComboBox (baseController.getWords());
+		this.dropDown = new JComboBox (baseController.getHipsters());
 		
 		
 		setupPanel();
@@ -48,6 +54,21 @@ public class HipsterPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		dropDown.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				infoLabel.setText(dropDown.getSelectedItem().toString());
+			}
+		});
 		
+		myButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				baseController.impactHipsters();
+				repaint();
+			}
+		});
 	}
 }
